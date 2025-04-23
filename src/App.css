@@ -49,7 +49,7 @@ body {
 .todo-item input {
   margin-right: 15px;
 }
-.todo-item button {
+.todo-item button, .container .delete-all {
   background: #d35e0f;
   color: #fff;
   border: 1px solid #d35e0f;
@@ -57,4 +57,9 @@ body {
   cursor: pointer;
   float: right;
   outline: none;
+}
+.todo-item button:nth-of-type(2) {
+  background: #038203;
+  border-color: #038203;
+  margin-right: 5px;
 }
