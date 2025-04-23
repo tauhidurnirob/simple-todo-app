@@ -1,12 +1,18 @@
 import React from "react";
 
-const TodoItem = ({ todo, handleChangeProps, deleteTodoProps }) => {
-  const completedStyle = {
-    fontStyle: "italic",
-    color: "#d35e0f",
-    opacity: 0.4,
-    textDecoration: "line-through",
-  };
+const TodoItem = ({
+  todo,
+  handleChangeProps,
+  deleteTodoProps,
+  addTag,
+  tag,
+}) => {
+  // const completedStyle = {
+  //   fontStyle: "italic",
+  //   color: "#d35e0f",
+  //   opacity: 0.4,
+  //   textDecoration: "line-through",
+  // };
 
   const { completed, id, title } = todo;
 
@@ -18,7 +24,9 @@ const TodoItem = ({ todo, handleChangeProps, deleteTodoProps }) => {
         onChange={() => handleChangeProps(id)}
       />
       <button onClick={() => deleteTodoProps(id)}>Delete</button>
-      <span style={completed ? completedStyle : null}>{title}</span>
+      <button onClick={() => addTag(id)}>Add Tag</button>
+      <span>{title}</span>
+      {tag && <span style={{color: tag.color, marginLeft: "5px"}} >{tag.name}</span>}
     </li>
   );
 };
